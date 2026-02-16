@@ -1,0 +1,35 @@
+organic_cpu_profile {
+  id: "example-organic-cpu"
+  version: "1.0.0"
+
+  allowed_domains: [
+    "home",
+    "academic",
+    "ecology_edge"
+  ]
+
+  token_budgets {
+    max_context_tokens: 2048
+    max_output_tokens: 256
+    max_daily_tokens: 50000
+  }
+
+  logging_policy {
+    store_mode: "local_only"          # or "aggregated_metrics_only"
+    retention_days: 7
+    anonymize_text: true
+  }
+
+  energy_envelope {
+    max_concurrent_sessions: 3
+    prefer_idle_windows: [
+      "00:00-06:00"
+    ]
+  }
+
+  deny_list: [
+    "political_campaigning",
+    "manipulative_persuasion",
+    "high_risk_medical_advice"
+  ]
+}
