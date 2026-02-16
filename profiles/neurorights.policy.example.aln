@@ -1,0 +1,28 @@
+neurorights_policy {
+  version: "1.0.0"
+
+  mental_privacy {
+    export_neural_data: "only_aggregates"   # "never" | "only_aggregates" | "with_explicit_consent"
+    allow_cross_system_linkage: false
+  }
+
+  mental_integrity {
+    no_hidden_suggestion_loops: true
+    no_identity_overwrite: true
+  }
+
+  cognitive_liberty {
+    allow_refusal: true
+    require_explicit_opt_in_for_experiments: true
+  }
+
+  fairness_and_bias {
+    protect_from_algorithmic_bias: true
+    require_bias_audit_for_new_models: true
+  }
+
+  risk_envelope {
+    max_risk_of_harm: 0.3
+    enforcement_mode: "hard_fail"      # options might include "hard_fail" or "log_and_fail"
+  }
+}
