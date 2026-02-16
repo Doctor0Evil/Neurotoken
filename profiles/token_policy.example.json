@@ -1,0 +1,62 @@
+{
+  "version": "1.0.0",
+  "source": {
+    "organic_cpu_profile": "organic_cpu.profile.example.aln",
+    "neurorights_policy": "neurorights.policy.example.aln"
+  },
+  "domains": {
+    "home": {
+      "enabled": true
+    },
+    "academic": {
+      "enabled": true
+    },
+    "ecology_edge": {
+      "enabled": true
+    },
+    "finance": {
+      "enabled": false
+    }
+  },
+  "routing_preferences": {
+    "home": {
+      "engine": "compact-llm",
+      "max_tokens": 192,
+      "allow_streaming": true,
+      "token_optimization_methods": [
+        "compression",
+        "dictionary_substitution",
+        "truncation"
+      ]
+    },
+    "academic": {
+      "engine": "research-llm",
+      "max_tokens": 512,
+      "allow_streaming": false,
+      "token_optimization_methods": [
+        "compression",
+        "deduplication",
+        "sequence_pattern_reuse"
+      ]
+    },
+    "ecology_edge": {
+      "engine": "edge-eco-llm",
+      "max_tokens": 256,
+      "allow_streaming": true,
+      "token_optimization_methods": [
+        "compression",
+        "abbreviation",
+        "cache_maximization"
+      ]
+    }
+  },
+  "batching_rules": {
+    "max_batch_size": 8,
+    "allow_mixed_domains": false
+  },
+  "logging": {
+    "store_mode": "local_only",
+    "retention_days": 7,
+    "anonymize_text": true
+  }
+}
